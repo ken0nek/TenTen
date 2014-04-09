@@ -21,6 +21,8 @@
 		4A5647D518F4C4E9001713EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5647B718F4C4E9001713EB /* UIKit.framework */; };
 		4A5647DD18F4C4E9001713EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A5647DB18F4C4E9001713EB /* InfoPlist.strings */; };
 		4A5647DF18F4C4E9001713EB /* TenTenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647DE18F4C4E9001713EB /* TenTenTests.m */; };
+		4A5647F018F4C8AA001713EB /* TTViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647EF18F4C8AA001713EB /* TTViewManager.m */; };
+		4A5647F618F4D56C001713EB /* TTGestureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647F518F4D56C001713EB /* TTGestureManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		4A5647DA18F4C4E9001713EB /* TenTenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TenTenTests-Info.plist"; sourceTree = "<group>"; };
 		4A5647DC18F4C4E9001713EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A5647DE18F4C4E9001713EB /* TenTenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TenTenTests.m; sourceTree = "<group>"; };
+		4A5647EE18F4C8AA001713EB /* TTViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTViewManager.h; sourceTree = "<group>"; };
+		4A5647EF18F4C8AA001713EB /* TTViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewManager.m; sourceTree = "<group>"; };
+		4A5647F418F4D56C001713EB /* TTGestureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGestureManager.h; sourceTree = "<group>"; };
+		4A5647F518F4D56C001713EB /* TTGestureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGestureManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				4A5647C518F4C4E9001713EB /* Main.storyboard */,
 				4A5647C818F4C4E9001713EB /* TTViewController.h */,
 				4A5647C918F4C4E9001713EB /* TTViewController.m */,
+				4A5647F418F4D56C001713EB /* TTGestureManager.h */,
+				4A5647F518F4D56C001713EB /* TTGestureManager.m */,
+				4A5647EE18F4C8AA001713EB /* TTViewManager.h */,
+				4A5647EF18F4C8AA001713EB /* TTViewManager.m */,
 				4A5647CB18F4C4E9001713EB /* Images.xcassets */,
 				4A5647BA18F4C4E9001713EB /* Supporting Files */,
 			);
@@ -250,8 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A5647F018F4C8AA001713EB /* TTViewManager.m in Sources */,
 				4A5647C418F4C4E9001713EB /* TTAppDelegate.m in Sources */,
 				4A5647C018F4C4E9001713EB /* main.m in Sources */,
+				4A5647F618F4D56C001713EB /* TTGestureManager.m in Sources */,
 				4A5647CA18F4C4E9001713EB /* TTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

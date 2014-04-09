@@ -8,7 +8,18 @@
 
 #import "TTViewController.h"
 
+#import "TTGestureManager.h"
+
+#import "TTViewManager.h"
+
 @interface TTViewController ()
+{
+    TTViewManager *vm;
+    UILabel *label1;
+    UILabel *label2;
+    UILabel *label3;
+    UILabel *label4;
+}
 
 @end
 
@@ -18,6 +29,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    label1 = [TTViewManager TTMakeLabel:CGPointMake(100, 200) withTag:0 withNumber:1];
+    label2 = [TTViewManager TTMakeLabel:CGPointMake(200, 200) withTag:1 withNumber:2];
+    label3 = [TTViewManager TTMakeLabel:CGPointMake(100, 300) withTag:2 withNumber:3];
+    label4 = [TTViewManager TTMakeLabel:CGPointMake(200, 300) withTag:3 withNumber:4];
+    
+    [self.view addSubview:label1];
+    [self.view addSubview:label2];
+    [self.view addSubview:label3];
+    [self.view addSubview:label4];
+    
+    [TTGestureManager setDragForView:label1];
+    [TTGestureManager setDragForView:label2];
+    [TTGestureManager setDragForView:label3];
+    [TTGestureManager setDragForView:label4];
+    
+//    NSLog(@"%@", NSStringFromClass([[self.view viewWithTag:0] class]));
+//    NSLog(@"%@", [self.view subviews]);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,5 +55,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+// -------------------------------------------------------
+//  10ができる組み合わせのデータ
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+//  画像の名前は1.png-9.png
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+//  UIImageView+TTを作って、@property numberを加える
+// -------------------------------------------------------
 
 @end
