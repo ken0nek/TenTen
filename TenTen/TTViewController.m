@@ -30,20 +30,35 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    label1 = [TTViewManager TTMakeLabel:CGPointMake(100, 200) withTag:0 withNumber:1];
-    label2 = [TTViewManager TTMakeLabel:CGPointMake(200, 200) withTag:1 withNumber:2];
-    label3 = [TTViewManager TTMakeLabel:CGPointMake(100, 300) withTag:2 withNumber:3];
-    label4 = [TTViewManager TTMakeLabel:CGPointMake(200, 300) withTag:3 withNumber:4];
+//    label1 = [TTViewManager TTMakeLabel:CGPointMake(100, 200) withTag:0 withNumber:1];
+//    label2 = [TTViewManager TTMakeLabel:CGPointMake(200, 200) withTag:1 withNumber:2];
+//    label3 = [TTViewManager TTMakeLabel:CGPointMake(100, 300) withTag:2 withNumber:3];
+//    label4 = [TTViewManager TTMakeLabel:CGPointMake(200, 300) withTag:3 withNumber:4];
+//    
+//    [self.view addSubview:label1];
+//    [self.view addSubview:label2];
+//    [self.view addSubview:label3];
+//    [self.view addSubview:label4];
+//    
+//    [TTGestureManager setDragForView:label1];
+//    [TTGestureManager setDragForView:label2];
+//    [TTGestureManager setDragForView:label3];
+//    [TTGestureManager setDragForView:label4];
     
-    [self.view addSubview:label1];
-    [self.view addSubview:label2];
-    [self.view addSubview:label3];
-    [self.view addSubview:label4];
-    
-    [TTGestureManager setDragForView:label1];
-    [TTGestureManager setDragForView:label2];
-    [TTGestureManager setDragForView:label3];
-    [TTGestureManager setDragForView:label4];
+    for (int i  = 0; i < 4; i++) {
+        int x, y;
+        if ((i + 1) % 2) {
+            x = 100;
+            y += 100;
+        }else{
+            x += 100;
+        }
+        
+        UILabel *label = [[UILabel alloc] init];
+        label = [TTViewManager TTMakeLabel:CGPointMake(x, y) withTag:i withNumber:(i + 1)];
+        [self.view addSubview:label];
+        [TTGestureManager setDragForView:label];
+    }
     
 //    NSLog(@"%@", NSStringFromClass([[self.view viewWithTag:0] class]));
 //    NSLog(@"%@", [self.view subviews]);

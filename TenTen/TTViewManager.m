@@ -27,10 +27,10 @@
     
     UILabel *label = [[UILabel alloc] init];
     label.frame = rect;
+    label.center = point;
     label.tag = tagNumber;
     label.font = [UIFont systemFontOfSize:25];
-    //label.backgroundColor = [UIColor blackColor];
-    //label.alpha = 0.7;
+    label.textAlignment = NSTextAlignmentCenter;
     label.text = [NSString stringWithFormat:@"%d", number];
     label.userInteractionEnabled = YES;
     return label;

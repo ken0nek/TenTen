@@ -102,14 +102,14 @@
     [aView removeFromSuperview];
     [bView removeFromSuperview];
     
-    UILabel *label5 = [TTViewManager TTMakeLabel:point  withTag:4 withNumber:sum];
-    NSLog(@"%@", label5);
+    UILabel *newLabel = [TTViewManager TTMakeLabel:point withTag:4 withNumber:sum];
+    [TTGestureManager setDragForView:newLabel];
     
     //UIViewController*vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     //NSLog(@"%@", vc);
     //[[vc view] addSubview:label5];
 
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"add-label" object:label5];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"add-label" object:newLabel];
     
 }
 @end
