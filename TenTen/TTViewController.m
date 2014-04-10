@@ -48,6 +48,10 @@
 //    NSLog(@"%@", NSStringFromClass([[self.view viewWithTag:0] class]));
 //    NSLog(@"%@", [self.view subviews]);
     
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"add-label"
+                                                      object:nil queue:nil usingBlock:^(NSNotification *note) {
+                                                          [self.view addSubview:note.object];
+                                                      }];
 }
 
 - (void)didReceiveMemoryWarning

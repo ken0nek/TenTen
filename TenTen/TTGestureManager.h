@@ -16,5 +16,9 @@
 
 + (void)checkIntersection:(UIPanGestureRecognizer *)sender;
 
-+ (void)didIntersect:(UIView *)aView with:(UIView *)bView;
+//+ (void)didIntersect:(UIView *)aView withView:(UIView *)bView at:(CGPoint)point;
+
++ (void)didIntersect:(UILabel *)aView withView:(UILabel *)bView at:(CGPoint)point;
+
++ (CGPoint)calculateDistance:(UIPanGestureRecognizer *)sender;
 @end
