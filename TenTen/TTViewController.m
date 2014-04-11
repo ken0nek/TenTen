@@ -14,11 +14,8 @@
 
 @interface TTViewController ()
 {
-    TTViewManager *vm;
-    UILabel *label1;
-    UILabel *label2;
-    UILabel *label3;
-    UILabel *label4;
+    NSString *aLine;
+    int figures[4];
 }
 
 @end
@@ -30,20 +27,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-//    label1 = [TTViewManager TTMakeLabel:CGPointMake(100, 200) withTag:0 withNumber:1];
-//    label2 = [TTViewManager TTMakeLabel:CGPointMake(200, 200) withTag:1 withNumber:2];
-//    label3 = [TTViewManager TTMakeLabel:CGPointMake(100, 300) withTag:2 withNumber:3];
-//    label4 = [TTViewManager TTMakeLabel:CGPointMake(200, 300) withTag:3 withNumber:4];
-//    
-//    [self.view addSubview:label1];
-//    [self.view addSubview:label2];
-//    [self.view addSubview:label3];
-//    [self.view addSubview:label4];
-//    
-//    [TTGestureManager setDragForView:label1];
-//    [TTGestureManager setDragForView:label2];
-//    [TTGestureManager setDragForView:label3];
-//    [TTGestureManager setDragForView:label4];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"combination" ofType:@"txt"];
+    if (filePath) {
+        NSString *contentOfFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+        NSArray *lines = [contentOfFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        NSLog(@"%@", lines);
+        int randomNumber = arc4random() % [lines count];
+        aLine = lines[randomNumber];
+        NSLog(@"%d", [aLine intValue]);
+    }
+    
+    [self convertToArray:aLine];
     
     for (int i  = 0; i < 4; i++) {
         int x, y;
@@ -55,7 +49,7 @@
         }
         
         UILabel *label = [[UILabel alloc] init];
-        label = [TTViewManager TTMakeLabel:CGPointMake(x, y) withTag:i withNumber:(i + 1)];
+        label = [TTViewManager TTMakeLabel:CGPointMake(x, y) withTag:i withNumber:figures[i]];
         [self.view addSubview:label];
         [TTGestureManager setDragForView:label];
     }
@@ -73,6 +67,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)convertToArray:(NSString *)combinationString
+{
+    int combinationInt = [combinationString intValue];
+    for (int i = 0; i < 4; i++) {
+        figures[i] = combinationInt % 10;
+        NSLog(@"%d", figures[i]);
+        combinationInt /= 10;
+    }
+    
+    
 }
 
 // -------------------------------------------------------
