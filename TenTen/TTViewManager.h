@@ -7,11 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TTImageView.h"
+
+typedef enum TTFieldTypes{
+    TTFieldTypeAddition,
+    TTFieldTypeSubtraction,
+    TTFieldTypeMultiplication,
+    TTFieldTypeDivision
+} TTFieldType;
 
 @interface TTViewManager : NSObject
 
-+ (UIImageView *)TTMakeImageView:(CGRect)rect withTag:(NSInteger)tagNumber withImageName:(NSString *)imageName;
++ (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber;
 
-+ (UILabel *)TTMakeLabel:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)number;
+// + (UILabel *)TTMakeLabel:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)number;
+
++ (UIImageView *)TTMakeFieldImageView:(CGPoint)point withTag:(TTFieldType)type;
 
 @end

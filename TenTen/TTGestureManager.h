@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TTViewController.h"
+#import "TTViewManager.h"
+#import "TTImageView.h"
 
 @interface TTGestureManager : NSObject
 
@@ -16,9 +19,9 @@
 
 + (void)checkIntersection:(UIPanGestureRecognizer *)sender;
 
-//+ (void)didIntersect:(UIView *)aView withView:(UIView *)bView at:(CGPoint)point;
++ (void)didIntersect:(TTImageView *)aView withView:(TTImageView *)bView at:(CGPoint)point;
 
-+ (void)didIntersect:(UILabel *)aView withView:(UILabel *)bView at:(CGPoint)point;
+//+ (void)didIntersect:(UILabel *)aView withView:(UILabel *)bView at:(CGPoint)point;
 
 + (CGPoint)calculateDistance:(UIPanGestureRecognizer *)sender;
 @end

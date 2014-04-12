@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "TTGestureManager.h"
+
+#import "TTViewManager.h"
+
+#import "TTImageView.h"
+
 @interface TTViewController : UIViewController
 
 @end
