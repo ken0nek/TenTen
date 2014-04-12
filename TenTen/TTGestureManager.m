@@ -14,8 +14,6 @@
 
 @implementation TTGestureManager
 
-
-
 + (void)setDragForView:(UIView *)view
 {
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)];
@@ -52,6 +50,8 @@
     
     if (sender.state == UIGestureRecognizerStateEnded) {
         [self checkIntersection:sender];
+        
+        // [self determineOperator:sender];
     }
 }
 
@@ -63,14 +63,30 @@
         if ([[aView class] isSubclassOfClass:[TTImageView class]]) {
             if (CGRectIntersectsRect(aView.frame, sender.view.frame)) {
                 if (aView.tag != sender.view.tag) {
-                    [self didIntersect:(TTImageView *)aView withView:(TTImageView *)sender.view at:[self calculateDistance:sender]];
+                    [self didIntersect:sender intersect:(TTImageView *)aView with:(TTImageView *)sender.view];
+                    
                     NSLog(@"Intersect! aView.tag = %d and sender.view.tag = %d", (int)aView.tag, (int)sender.view.tag);
+                    
                     break;
                 }
             } else {
                 NSLog(@"Not intersect!");
                 
             }
+        } else {
+            
+            int ope = 0;
+            for (UIView *aField in sender.view.superview.subviews) {
+                if (![[aField class] isSubclassOfClass:[TTImageView class]] && CGRectContainsRect(aField.frame , sender.view.frame)) {
+                    ope = (int)aField.tag;
+                    NSLog(@"aField = %@", aField);
+                    NSLog(@"ope = %d", ope);
+                    break;
+                } else {
+                    NSLog(@"うほほ");
+                }
+            }
+            
         }
     }
 //    for (UILabel *aView in sender.view.superview.subviews) {
@@ -109,17 +125,29 @@
 //    
 //}
 
-+ (void)didIntersect:(TTImageView *)aView withView:(TTImageView *)bView at:(CGPoint)point
++ (void)didIntersect:(UIPanGestureRecognizer *)sender intersect:(TTImageView *)aView with:(TTImageView *)bView
 {
     int aNumber = [aView.number intValue];
     int bNumber = [bView.number intValue];
-    int sum = aNumber + bNumber;
+    
+    CGPoint point = [self calculateDistance:sender];
     
     [aView removeFromSuperview];
     [bView removeFromSuperview];
     
+    int ope = [self determineOperator:sender];
+    
+    int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
+    
+    // -------------------------------------------------------
+    //  TODO: tagの処理
+    // -------------------------------------------------------
+    
+    int tagNumber = output + aNumber;
+    
     // UILabel *newLabel = [TTViewManager TTMakeLabel:point withTag:4 withNumber:sum];
-    TTImageView *newImageView = [TTViewManager TTMakeImageView:point withTag:sum withNumber:sum];
+    TTImageView *newImageView = [TTViewManager TTMakeImageView:point withTag:tagNumber withNumber:output];
+    NSLog(@"%d", [newImageView.number intValue]);
     // [TTGestureManager setDragForView:newLabel];
     [TTGestureManager setDragForView:newImageView];
     
@@ -129,5 +157,46 @@
     
     // [[NSNotificationCenter defaultCenter] postNotificationName:@"didAppearNewLabel" object:newLabel];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didAppearNewImageView" object:newImageView];
+}
+
++ (int)calculateOutput:(int)a and:(int)b withOpe:(int)fieldType
+{
+    int output = 0;
+    NSLog(@"fieldType = %d", fieldType);
+    switch (fieldType) {
+        case 0:
+            output = a + b;
+            break;
+        case 1:
+            output = a - b;
+            break;
+        case 2:
+            output = a * b;
+            break;
+        case 3:
+            output =  a / b;
+        default:
+            break;
+    }
+    NSLog(@"output = %d", output);
+    return output;
+}
+               
+               
++ (int)determineOperator:(UIPanGestureRecognizer *)sender
+{
+    int ope = 0;
+    // NSLog(@"ope = %d", ope);
+    for (UIView *aField in sender.view.superview.subviews) {
+        if (![[aField class] isSubclassOfClass:[TTImageView class]] && CGRectContainsRect(aField.frame , sender.view.frame)) {
+            ope = (int)aField.tag;
+            NSLog(@"aField = %@", aField);
+            NSLog(@"ope = %d", ope);
+            break;
+        } else {
+            
+        }
+    }
+    return ope;
 }
 @end

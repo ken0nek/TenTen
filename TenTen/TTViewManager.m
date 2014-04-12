@@ -15,19 +15,34 @@
 
 + (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber
 {
-    CGSize size = CGSizeMake(60, 80);
+    NSLog(@"%s", __func__);
+    CGSize size = CGSizeMake(digitImageWidth, digitImageHeight);
     CGRect rect = {point, size};
 
     TTImageView *imageView = [[TTImageView alloc] init];
     imageView.frame = rect;
     imageView.center = point;
     imageView.tag = tagNumber;
-    [imageView setNumber:[NSNumber numberWithInt:imageNumber]];
+    imageView.number = [NSNumber numberWithInt:imageNumber];
     imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d", imageNumber]];
     imageView.userInteractionEnabled = YES;
+    
     return imageView;
 }
 
++ (UIImageView *)TTMakeFieldImageView:(CGPoint)point withTag:(int)type
+{
+    CGSize size = CGSizeMake(fieldImageWidth, fieldImageHeight);
+    CGRect rect = {point, size};
+    
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.frame = rect;
+    imageView.tag = type;
+    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"field%d", type]];
+    imageView.userInteractionEnabled = NO;
+    
+    return imageView;
+}
 
 //+ (UILabel *)TTMakeLabel:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)number
 //{

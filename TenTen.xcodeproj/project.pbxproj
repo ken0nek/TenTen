@@ -30,6 +30,10 @@
 		4A39790F18F97F8C004E252C /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3978FA18F97F8C004E252C /* 8.png */; };
 		4A39791018F97F8C004E252C /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3978FB18F97F8C004E252C /* 9.png */; };
 		4A39791118F97F8C004E252C /* TenTenNumbers.ai in Resources */ = {isa = PBXBuildFile; fileRef = 4A3978FC18F97F8C004E252C /* TenTenNumbers.ai */; };
+		4A39792318F9906A004E252C /* field0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A39791F18F9906A004E252C /* field0.png */; };
+		4A39792418F9906A004E252C /* field1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A39792018F9906A004E252C /* field1.png */; };
+		4A39792518F9906A004E252C /* field2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A39792118F9906A004E252C /* field2.png */; };
+		4A39792618F9906A004E252C /* field3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A39792218F9906A004E252C /* field3.png */; };
 		4A5647B418F4C4E9001713EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5647B318F4C4E9001713EB /* Foundation.framework */; };
 		4A5647B618F4C4E9001713EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5647B518F4C4E9001713EB /* CoreGraphics.framework */; };
 		4A5647B818F4C4E9001713EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5647B718F4C4E9001713EB /* UIKit.framework */; };
@@ -85,6 +89,11 @@
 		4A3978FA18F97F8C004E252C /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		4A3978FB18F97F8C004E252C /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		4A3978FC18F97F8C004E252C /* TenTenNumbers.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TenTenNumbers.ai; sourceTree = "<group>"; };
+		4A39791218F98A2F004E252C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4A39791F18F9906A004E252C /* field0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field0.png; sourceTree = "<group>"; };
+		4A39792018F9906A004E252C /* field1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field1.png; sourceTree = "<group>"; };
+		4A39792118F9906A004E252C /* field2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field2.png; sourceTree = "<group>"; };
+		4A39792218F9906A004E252C /* field3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field3.png; sourceTree = "<group>"; };
 		4A5647B018F4C4E9001713EB /* TenTen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenTen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5647B318F4C4E9001713EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A5647B518F4C4E9001713EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,7 +144,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A3978E718F97F8C004E252C /* NumberImages */ = {
+		4A3978E718F97F8C004E252C /* numberImages */ = {
 			isa = PBXGroup;
 			children = (
 				4A3978E818F97F8C004E252C /* 0.png */,
@@ -160,7 +169,57 @@
 				4A3978FB18F97F8C004E252C /* 9.png */,
 				4A3978FC18F97F8C004E252C /* TenTenNumbers.ai */,
 			);
+			name = numberImages;
 			path = NumberImages;
+			sourceTree = "<group>";
+		};
+		4A39791B18F98D58004E252C /* fieldImages */ = {
+			isa = PBXGroup;
+			children = (
+				4A39791F18F9906A004E252C /* field0.png */,
+				4A39792018F9906A004E252C /* field1.png */,
+				4A39792118F9906A004E252C /* field2.png */,
+				4A39792218F9906A004E252C /* field3.png */,
+			);
+			name = fieldImages;
+			sourceTree = "<group>";
+		};
+		4A39791C18F98D6A004E252C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4A39791B18F98D58004E252C /* fieldImages */,
+				4A3978E718F97F8C004E252C /* numberImages */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		4A39791D18F98D7A004E252C /* TTImageVIew */ = {
+			isa = PBXGroup;
+			children = (
+				4A3978C318F942E9004E252C /* TTImageView.h */,
+				4A3978C418F942E9004E252C /* TTImageView.m */,
+				4A3978E418F970B6004E252C /* TTImageView+WithNumber.h */,
+				4A3978E518F970B6004E252C /* TTImageView+WithNumber.m */,
+			);
+			name = TTImageVIew;
+			sourceTree = "<group>";
+		};
+		4A39791E18F98D85004E252C /* TTGestureManager */ = {
+			isa = PBXGroup;
+			children = (
+				4A5647F418F4D56C001713EB /* TTGestureManager.h */,
+				4A5647F518F4D56C001713EB /* TTGestureManager.m */,
+			);
+			name = TTGestureManager;
+			sourceTree = "<group>";
+		};
+		4A39792718F99192004E252C /* TTViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				4A5647EE18F4C8AA001713EB /* TTViewManager.h */,
+				4A5647EF18F4C8AA001713EB /* TTViewManager.m */,
+			);
+			name = TTViewManager;
 			sourceTree = "<group>";
 		};
 		4A5647A718F4C4E8001713EB = {
@@ -199,19 +258,15 @@
 				4A5647C218F4C4E9001713EB /* TTAppDelegate.h */,
 				4A5647C318F4C4E9001713EB /* TTAppDelegate.m */,
 				4A5647C518F4C4E9001713EB /* Main.storyboard */,
+				4A39791218F98A2F004E252C /* Constants.h */,
 				4A5647C818F4C4E9001713EB /* TTViewController.h */,
 				4A5647C918F4C4E9001713EB /* TTViewController.m */,
-				4A3978C318F942E9004E252C /* TTImageView.h */,
-				4A3978C418F942E9004E252C /* TTImageView.m */,
-				4A3978E418F970B6004E252C /* TTImageView+WithNumber.h */,
-				4A3978E518F970B6004E252C /* TTImageView+WithNumber.m */,
-				4A5647F418F4D56C001713EB /* TTGestureManager.h */,
-				4A5647F518F4D56C001713EB /* TTGestureManager.m */,
-				4A5647EE18F4C8AA001713EB /* TTViewManager.h */,
-				4A5647EF18F4C8AA001713EB /* TTViewManager.m */,
+				4A39791D18F98D7A004E252C /* TTImageVIew */,
+				4A39792718F99192004E252C /* TTViewManager */,
+				4A39791E18F98D85004E252C /* TTGestureManager */,
 				4A5647CB18F4C4E9001713EB /* Images.xcassets */,
 				4AE1E2A218F7B5DB00CA5D0C /* combination.txt */,
-				4A3978E718F97F8C004E252C /* NumberImages */,
+				4A39791C18F98D6A004E252C /* images */,
 				4A5647BA18F4C4E9001713EB /* Supporting Files */,
 			);
 			path = TenTen;
@@ -337,6 +392,8 @@
 				4A39791118F97F8C004E252C /* TenTenNumbers.ai in Resources */,
 				4A39790818F97F8C004E252C /* 19.png in Resources */,
 				4A39791018F97F8C004E252C /* 9.png in Resources */,
+				4A39792518F9906A004E252C /* field2.png in Resources */,
+				4A39792318F9906A004E252C /* field0.png in Resources */,
 				4AE1E2A318F7B5DB00CA5D0C /* combination.txt in Resources */,
 				4A3978FF18F97F8C004E252C /* 10.png in Resources */,
 				4A39790318F97F8C004E252C /* 14.png in Resources */,
@@ -347,7 +404,9 @@
 				4A39790018F97F8C004E252C /* 11.png in Resources */,
 				4A39790B18F97F8C004E252C /* 4.png in Resources */,
 				4A39790218F97F8C004E252C /* 13.png in Resources */,
+				4A39792618F9906A004E252C /* field3.png in Resources */,
 				4A5647CC18F4C4E9001713EB /* Images.xcassets in Resources */,
+				4A39792418F9906A004E252C /* field1.png in Resources */,
 				4A3978FE18F97F8C004E252C /* 1.png in Resources */,
 				4A5647BE18F4C4E9001713EB /* InfoPlist.strings in Resources */,
 				4A5647C718F4C4E9001713EB /* Main.storyboard in Resources */,

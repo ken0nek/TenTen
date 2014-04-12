@@ -19,9 +19,14 @@
 
 + (void)checkIntersection:(UIPanGestureRecognizer *)sender;
 
-+ (void)didIntersect:(TTImageView *)aView withView:(TTImageView *)bView at:(CGPoint)point;
++ (void)didIntersect:(UIPanGestureRecognizer *)sender intersect:(TTImageView *)aView with:(TTImageView *)bView;
+
++ (int)calculateOutput:(int)a and:(int)b withOpe:(int)fieldType;
+
++ (int)determineOperator:(UIPanGestureRecognizer *)sender;
 
 //+ (void)didIntersect:(UILabel *)aView withView:(UILabel *)bView at:(CGPoint)point;
 
 + (CGPoint)calculateDistance:(UIPanGestureRecognizer *)sender;
+
 @end
