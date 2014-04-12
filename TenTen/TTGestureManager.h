@@ -23,7 +23,7 @@
 
 + (int)calculateOutput:(int)a and:(int)b withOpe:(int)fieldType;
 
-+ (int)determineOperator:(UIPanGestureRecognizer *)sender;
++ (int)determineOperator:(TTImageView *)view;
 
 //+ (void)didIntersect:(UILabel *)aView withView:(UILabel *)bView at:(CGPoint)point;
 

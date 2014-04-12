@@ -73,20 +73,6 @@
                 NSLog(@"Not intersect!");
                 
             }
-        } else {
-            
-            int ope = 0;
-            for (UIView *aField in sender.view.superview.subviews) {
-                if (![[aField class] isSubclassOfClass:[TTImageView class]] && CGRectContainsRect(aField.frame , sender.view.frame)) {
-                    ope = (int)aField.tag;
-                    NSLog(@"aField = %@", aField);
-                    NSLog(@"ope = %d", ope);
-                    break;
-                } else {
-                    NSLog(@"うほほ");
-                }
-            }
-            
         }
     }
 //    for (UILabel *aView in sender.view.superview.subviews) {
@@ -135,7 +121,7 @@
     [aView removeFromSuperview];
     [bView removeFromSuperview];
     
-    int ope = [self determineOperator:sender];
+    int ope = [self determineOperator:aView];
     
     int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
     
@@ -183,20 +169,24 @@
 }
                
                
-+ (int)determineOperator:(UIPanGestureRecognizer *)sender
++ (int)determineOperator:(TTImageView *)aView
 {
     int ope = 0;
-    // NSLog(@"ope = %d", ope);
-    for (UIView *aField in sender.view.superview.subviews) {
-        if (![[aField class] isSubclassOfClass:[TTImageView class]] && CGRectContainsRect(aField.frame , sender.view.frame)) {
+    
+    UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    
+    for (UIView *aField in [[vc view] subviews]) {
+        NSLog(@"????????????????");
+        if (![[aField class] isSubclassOfClass:[TTImageView class]] && CGRectContainsRect(aField.frame, aView.frame)) {
+            NSLog(@"%@", aField);
             ope = (int)aField.tag;
-            NSLog(@"aField = %@", aField);
-            NSLog(@"ope = %d", ope);
+            NSLog(@"ope_ = %d", ope);
             break;
         } else {
-            
+            NSLog(@"えるす");
         }
     }
+    NSLog(@"ope = %d", ope);
     return ope;
 }
 @end

@@ -38,7 +38,6 @@
     
     NSLog(@"%s", __func__);
     
-    
     for (int i  = 0, dx = 0, dy = 0; i < 4; i++) {
         if ((i + 1) % 2) {
             dx = 100;
@@ -69,7 +68,6 @@
         imageView = [TTViewManager TTMakeFieldImageView:CGPointMake(fx, fy) withTag:j];
         [self.view addSubview:imageView];
     }
-
 }
 
 - (void)didReceiveMemoryWarning
