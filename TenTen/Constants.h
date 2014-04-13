@@ -24,7 +24,8 @@ typedef enum : int {
 
 typedef enum : int {
     TTActionTypeDidIntersect,
-    TTActionTypeDidClear
+    TTActionTypeDidClear,
+    TTActionTypeDidMiss
 } TTActionType;
 
 //typedef enum : int {

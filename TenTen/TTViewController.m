@@ -11,8 +11,8 @@
 
 @interface TTViewController ()
 {
-    NSString *aLine;
     int figures[4];
+    NSArray *lines;
 }
 
 @end
@@ -33,7 +33,7 @@
     
     [self loadTextFile];
     
-    [self convertToArray:aLine];
+    [self convertToArray];
     
     [self displayDigitImageView];
     
@@ -92,19 +92,35 @@
     if (filePath) {
         NSString *contentOfFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         //NSArray *lines = [contentOfFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-        NSArray *lines = [contentOfFile componentsSeparatedByString:@"\n"];
-        NSLog(@"%@", lines);
-        int randomNumber = arc4random() % [lines count];
-        aLine = lines[randomNumber];
-        NSLog(@"%d", [aLine intValue]);
+        lines = [contentOfFile componentsSeparatedByString:@"\n"];
     }
 }
 
-- (void)convertToArray:(NSString *)combinationString
+//- (void)convertToArray:(NSString *)combinationString
+//{
+//    NSLog(@"%@", lines);
+//    int randomNumber = arc4random() % [lines count];
+//    aLine = lines[randomNumber];
+//    NSLog(@"%d", [aLine intValue]);
+//    
+//    NSLog(@"%s", __func__);
+//    int combinationInt = [combinationString intValue];
+//    for (int i = 0; i < 4; i++) {
+//        figures[i] = combinationInt % 10;
+//        NSLog(@"%d", figures[i]);
+//        combinationInt /= 10;
+//    }
+//}
+
+- (void)convertToArray
 {
+    NSLog(@"%@", lines);
+    int randomNumber = arc4random() % [lines count];
+    NSString *aLine = lines[randomNumber];
+    NSLog(@"%d", [aLine intValue]);
     
     NSLog(@"%s", __func__);
-    int combinationInt = [combinationString intValue];
+    int combinationInt = [aLine intValue];
     for (int i = 0; i < 4; i++) {
         figures[i] = combinationInt % 10;
         NSLog(@"%d", figures[i]);
@@ -138,9 +154,7 @@
 {
     [TTViewManager TTDeleteImageView];
     
-    [self loadTextFile];
-    
-    [self convertToArray:aLine];
+    [self convertToArray];
     
     [self displayDigitImageView];
 }
