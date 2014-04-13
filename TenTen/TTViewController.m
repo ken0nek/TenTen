@@ -96,22 +96,6 @@
     }
 }
 
-//- (void)convertToArray:(NSString *)combinationString
-//{
-//    NSLog(@"%@", lines);
-//    int randomNumber = arc4random() % [lines count];
-//    aLine = lines[randomNumber];
-//    NSLog(@"%d", [aLine intValue]);
-//    
-//    NSLog(@"%s", __func__);
-//    int combinationInt = [combinationString intValue];
-//    for (int i = 0; i < 4; i++) {
-//        figures[i] = combinationInt % 10;
-//        NSLog(@"%d", figures[i]);
-//        combinationInt /= 10;
-//    }
-//}
-
 - (void)convertToArray
 {
     NSLog(@"%@", lines);

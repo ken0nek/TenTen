@@ -51,6 +51,8 @@
 		4A5647DF18F4C4E9001713EB /* TenTenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647DE18F4C4E9001713EB /* TenTenTests.m */; };
 		4A5647F018F4C8AA001713EB /* TTViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647EF18F4C8AA001713EB /* TTViewManager.m */; };
 		4A5647F618F4D56C001713EB /* TTGestureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647F518F4D56C001713EB /* TTGestureManager.m */; };
+		4A9C928F18FAF8C500D0070D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9C928E18FAF8C500D0070D /* icon@2x.png */; };
+		4A9C929118FAF98400D0070D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9C929018FAF98400D0070D /* Default@2x.png */; };
 		4AA0D58618FAE2BC00630E14 /* poyo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0D58418FAE2BC00630E14 /* poyo.mp3 */; };
 		4AA0D58718FAE2BC00630E14 /* surprise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0D58518FAE2BC00630E14 /* surprise.mp3 */; };
 		4AA0D58B18FAE33400630E14 /* TTSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0D58A18FAE33400630E14 /* TTSoundManager.m */; };
@@ -122,6 +124,8 @@
 		4A5647EF18F4C8AA001713EB /* TTViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewManager.m; sourceTree = "<group>"; };
 		4A5647F418F4D56C001713EB /* TTGestureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGestureManager.h; sourceTree = "<group>"; };
 		4A5647F518F4D56C001713EB /* TTGestureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGestureManager.m; sourceTree = "<group>"; };
+		4A9C928E18FAF8C500D0070D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		4A9C929018FAF98400D0070D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4AA0D58418FAE2BC00630E14 /* poyo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poyo.mp3; sourceTree = "<group>"; };
 		4AA0D58518FAE2BC00630E14 /* surprise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = surprise.mp3; sourceTree = "<group>"; };
 		4AA0D58918FAE33400630E14 /* TTSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSoundManager.h; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 			children = (
 				4A36E84618FAB3E5000F089F /* Silom.ttf */,
 				4AE1E2A218F7B5DB00CA5D0C /* combination.txt */,
+				4A9C928E18FAF8C500D0070D /* icon@2x.png */,
+				4A9C929018FAF98400D0070D /* Default@2x.png */,
 				4AA0D58818FAE2C200630E14 /* audio */,
 				4A39791C18F98D6A004E252C /* images */,
 			);
@@ -445,12 +451,14 @@
 				4A39790218F97F8C004E252C /* 13.png in Resources */,
 				4A39792618F9906A004E252C /* field3.png in Resources */,
 				4A5647CC18F4C4E9001713EB /* Images.xcassets in Resources */,
+				4A9C929118FAF98400D0070D /* Default@2x.png in Resources */,
 				4A39792418F9906A004E252C /* field1.png in Resources */,
 				4A3978FE18F97F8C004E252C /* 1.png in Resources */,
 				4A5647BE18F4C4E9001713EB /* InfoPlist.strings in Resources */,
 				4AA0D58618FAE2BC00630E14 /* poyo.mp3 in Resources */,
 				4A5647C718F4C4E9001713EB /* Main.storyboard in Resources */,
 				4A36E84718FAB3E5000F089F /* Silom.ttf in Resources */,
+				4A9C928F18FAF8C500D0070D /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
