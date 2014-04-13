@@ -21,7 +21,7 @@
 
 + (void)didIntersect:(UIPanGestureRecognizer *)sender intersect:(TTImageView *)aView with:(TTImageView *)bView;
 
-+ (int)calculateOutput:(int)a and:(int)b withOpe:(int)fieldType;
++ (int)calculateOutput:(int)a and:(int)b withOpe:(TTFiledType)fieldType;
 
 + (int)determineOperator:(TTImageView *)view;
 

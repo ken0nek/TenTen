@@ -60,9 +60,9 @@
     for (int j = 0, fx = 0, fy = 140; j < 4; j++) {
         if ((j + 1) % 2) {
             fx = 20;
-            fy += fieldImageHeight;
+            fy += FieldImageHeight;
         } else {
-            fx += fieldImageWidth;
+            fx += FieldImageWidth;
         }
         UIImageView *imageView =[[UIImageView alloc] init];
         imageView = [TTViewManager TTMakeFieldImageView:CGPointMake(fx, fy) withTag:j];

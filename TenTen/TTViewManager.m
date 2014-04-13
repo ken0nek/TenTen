@@ -16,7 +16,7 @@
 + (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber
 {
     NSLog(@"%s", __func__);
-    CGSize size = CGSizeMake(digitImageWidth, digitImageHeight);
+    CGSize size = CGSizeMake(DigitImageWidth, DigitImageHeight);
     CGRect rect = {point, size};
 
     TTImageView *imageView = [[TTImageView alloc] init];
@@ -30,9 +30,9 @@
     return imageView;
 }
 
-+ (UIImageView *)TTMakeFieldImageView:(CGPoint)point withTag:(int)type
++ (UIImageView *)TTMakeFieldImageView:(CGPoint)point withTag:(TTFiledType)type
 {
-    CGSize size = CGSizeMake(fieldImageWidth, fieldImageHeight);
+    CGSize size = CGSizeMake(FieldImageWidth, FieldImageHeight);
     CGRect rect = {point, size};
     
     UIImageView *imageView = [[UIImageView alloc] init];

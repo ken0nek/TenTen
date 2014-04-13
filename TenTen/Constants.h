@@ -9,10 +9,23 @@
 #ifndef TenTen_Constants_h
 #define TenTen_Constants_h
 
-#define digitImageWidth 60
-#define digitImageHeight 80
+#define DigitImageWidth 60
+#define DigitImageHeight 80
 
-#define fieldImageWidth 140
-#define fieldImageHeight 140
+#define FieldImageWidth 140
+#define FieldImageHeight 140
+
+typedef enum : int {
+    TTFiledTypeAddtion,
+    TTFiledTypeSubtraction,
+    TTFiledTypeMultiplication,
+    TTFiledTypeDivision
+} TTFiledType;
+
+//typedef enum : int {
+//    TTGameState,
+//    <#MyEnumValueB#>,
+//    TTGemeStateEnded,
+//} TTGameState;
 
 #endif

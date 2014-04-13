@@ -15,6 +15,6 @@
 
 // + (UILabel *)TTMakeLabel:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)number;
 
-+ (UIImageView *)TTMakeFieldImageView:(CGPoint)point withTag:(int)type;
++ (UIImageView *)TTMakeFieldImageView:(CGPoint)point withTag:(TTFiledType)type;
 
 @end

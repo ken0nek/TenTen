@@ -145,22 +145,26 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didAppearNewImageView" object:newImageView];
 }
 
-+ (int)calculateOutput:(int)a and:(int)b withOpe:(int)fieldType
++ (int)calculateOutput:(int)a and:(int)b withOpe:(TTFiledType)fieldType
 {
     int output = 0;
     NSLog(@"fieldType = %d", fieldType);
     switch (fieldType) {
-        case 0:
+        case TTFiledTypeAddtion:
             output = a + b;
             break;
-        case 1:
+        case TTFiledTypeSubtraction:
             output = a - b;
             break;
-        case 2:
+        case TTFiledTypeMultiplication:
             output = a * b;
             break;
-        case 3:
-            output =  a / b;
+        case TTFiledTypeDivision:
+            if (a % b == 0) {
+                output =  a / b;
+            } else {
+                NSLog(@"fraction");
+            }
         default:
             break;
     }
