@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A36E84718FAB3E5000F089F /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A36E84618FAB3E5000F089F /* Silom.ttf */; };
+		4A36E84918FAB46E000F089F /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A36E84818FAB46E000F089F /* Background.png */; };
 		4A3978C518F942E9004E252C /* TTImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3978C418F942E9004E252C /* TTImageView.m */; };
 		4A3978E618F970B6004E252C /* TTImageView+WithNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3978E518F970B6004E252C /* TTImageView+WithNumber.m */; };
 		4A3978FD18F97F8C004E252C /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3978E818F97F8C004E252C /* 0.png */; };
@@ -64,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A36E84618FAB3E5000F089F /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
+		4A36E84818FAB46E000F089F /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		4A3978C318F942E9004E252C /* TTImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTImageView.h; sourceTree = "<group>"; };
 		4A3978C418F942E9004E252C /* TTImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTImageView.m; sourceTree = "<group>"; };
 		4A3978E418F970B6004E252C /* TTImageView+WithNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTImageView+WithNumber.h"; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		4A3978E718F97F8C004E252C /* numberImages */ = {
 			isa = PBXGroup;
 			children = (
+				4A36E84818FAB46E000F089F /* Background.png */,
 				4A3978E818F97F8C004E252C /* 0.png */,
 				4A3978E918F97F8C004E252C /* 1.png */,
 				4A3978EA18F97F8C004E252C /* 10.png */,
@@ -261,6 +266,7 @@
 				4A39791218F98A2F004E252C /* Constants.h */,
 				4A5647C818F4C4E9001713EB /* TTViewController.h */,
 				4A5647C918F4C4E9001713EB /* TTViewController.m */,
+				4A36E84618FAB3E5000F089F /* Silom.ttf */,
 				4A39791D18F98D7A004E252C /* TTImageVIew */,
 				4A39792718F99192004E252C /* TTViewManager */,
 				4A39791E18F98D85004E252C /* TTGestureManager */,
@@ -387,6 +393,7 @@
 				4A39790C18F97F8C004E252C /* 5.png in Resources */,
 				4A39790518F97F8C004E252C /* 16.png in Resources */,
 				4A39790918F97F8C004E252C /* 2.png in Resources */,
+				4A36E84918FAB46E000F089F /* Background.png in Resources */,
 				4A39790A18F97F8C004E252C /* 3.png in Resources */,
 				4A39790618F97F8C004E252C /* 17.png in Resources */,
 				4A39791118F97F8C004E252C /* TenTenNumbers.ai in Resources */,
@@ -410,6 +417,7 @@
 				4A3978FE18F97F8C004E252C /* 1.png in Resources */,
 				4A5647BE18F4C4E9001713EB /* InfoPlist.strings in Resources */,
 				4A5647C718F4C4E9001713EB /* Main.storyboard in Resources */,
+				4A36E84718FAB3E5000F089F /* Silom.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

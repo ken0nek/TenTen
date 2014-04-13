@@ -30,32 +30,34 @@
                                                           [self.view addSubview:note.object];
                                                       }];
     
+    
     [self loadTextFile];
     
     [self convertToArray:aLine];
     
-    // [self displayDigitImageView];
+    [self displayDigitImageView];
     
     NSLog(@"%s", __func__);
     
-    for (int i  = 0, dx = 0, dy = 0; i < 4; i++) {
-        if ((i + 1) % 2) {
-            dx = 100;
-            dy += 100;
-        } else {
-            dx += 100;
-        }
-        
-        //        UILabel *label = [[UILabel alloc] init];
-        //        label = [TTViewManager TTMakeLabel:CGPointMake(x, y) withTag:i withNumber:figures[i]];
-        //        [self.view addSubview:label];
-        //        [TTGestureManager setDragForView:label];
-        
-        TTImageView *imageView = [[TTImageView alloc] init];
-        imageView = [TTViewManager TTMakeImageView:CGPointMake(dx, dy) withTag:i withNumber:figures[i]];
-        [self.view addSubview:imageView];
-        [TTGestureManager setDragForView:imageView];
-    }
+//    for (int i  = 0, dx = 0, dy = 0; i < 4; i++) {
+//        if ((i + 1) % 2) {
+//            dx = 100;
+//            dy += 100;
+//        } else {
+//            dx += 100;
+//        }
+//        
+//        //        UILabel *label = [[UILabel alloc] init];
+//        //        label = [TTViewManager TTMakeLabel:CGPointMake(x, y) withTag:i withNumber:figures[i]];
+//        //        [self.view addSubview:label];
+//        //        [TTGestureManager setDragForView:label];
+//        
+//        TTImageView *imageView = [[TTImageView alloc] init];
+//        imageView = [TTViewManager TTMakeImageView:CGPointMake(dx, dy) withTag:i withNumber:figures[i]];
+//        NSLog(@"%@", imageView);
+//        [self.view addSubview:imageView];
+//        [TTGestureManager setDragForView:imageView];
+//    }
     
     for (int j = 0, fx = 0, fy = 140; j < 4; j++) {
         if ((j + 1) % 2) {
@@ -68,7 +70,12 @@
         imageView = [TTViewManager TTMakeFieldImageView:CGPointMake(fx, fy) withTag:j];
         [self.view addSubview:imageView];
     }
+    
+//    TTImageView *imageView = [[TTImageView alloc] init];
+//    imageView = [TTViewManager TTMakeImageView:CGPointMake(120, 200) withTag:0 withNumber:49];
+//    [self.view addSubview:imageView];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -104,20 +111,15 @@
     }
 }
 
-// -------------------------------------------------------
-//  TODO: [self ~];だとimageViewが表示されない
-// -------------------------------------------------------
-
 - (void)displayDigitImageView
 {
     NSLog(@"%s", __func__);
-    for (int i  = 0; i < 4; i++) {
-        int x, y;
+    for (int i  = 0, dx = 0, dy = 0; i < 4; i++) {
         if ((i + 1) % 2) {
-            x = 100;
-            y += 100;
-        }else{
-            x += 100;
+            dx = 100;
+            dy += 100;
+        } else {
+            dx += 100;
         }
         
         //        UILabel *label = [[UILabel alloc] init];
@@ -125,11 +127,29 @@
         //        [self.view addSubview:label];
         //        [TTGestureManager setDragForView:label];
         TTImageView *imageView = [[TTImageView alloc] init];
-        // imageView = [TTViewManager TTMakeImageView:CGPointMake(x, y) withTag:i withNumber:figures[i]];
-        imageView = [TTViewManager TTMakeImageView:CGPointMake(x, y) withTag:i withNumber:(i + 1)];
+        imageView = [TTViewManager TTMakeImageView:CGPointMake(dx, dy) withTag:i withNumber:figures[i]];
         [self.view addSubview:imageView];
         [TTGestureManager setDragForView:imageView];
     }
 }
+
+- (IBAction)Refresh
+{
+    [TTViewManager TTDeleteImageView];
+    
+    [self loadTextFile];
+    
+    [self convertToArray:aLine];
+    
+    [self displayDigitImageView];
+}
+
+- (IBAction)Undone
+{
+    [TTViewManager TTDeleteImageView];
+    
+    [self displayDigitImageView];
+}
+
 
 @end

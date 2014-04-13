@@ -11,10 +11,14 @@
 
 @interface TTViewManager : NSObject
 
++ (TTImageView *)TTMake:(CGPoint)point withNumber:(int)imageNumber;
+
 + (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber;
 
 // + (UILabel *)TTMakeLabel:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)number;
 
 + (UIImageView *)TTMakeFieldImageView:(CGPoint)point withTag:(TTFiledType)type;
+
++ (void)TTDeleteImageView;
 
 @end

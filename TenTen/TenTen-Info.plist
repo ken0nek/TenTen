@@ -8,6 +8,10 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Silom.ttf</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.practice.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>

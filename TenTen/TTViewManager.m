@@ -13,6 +13,37 @@
 
 #pragma mark - UIImageView
 
+// -------------------------------------------------------
+//  TODO: labelを貼った、imageViewを作っちゃう
+// -------------------------------------------------------
+
+//+ (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber
+//{
+//    CGSize size = CGSizeMake(DigitImageWidth, DigitImageHeight);
+//    CGRect rect = {point, size};
+//    
+//    UILabel *label = [[UILabel alloc] init];
+//    label.frame = CGRectMake(6, 10, 48, 60);
+//    label.textColor = [UIColor blackColor];
+//    label.contentMode = UIViewContentModeScaleAspectFill;
+//    label.adjustsFontSizeToFitWidth = YES;
+//    label.text = [NSString stringWithFormat:@"%d", imageNumber];
+//    label.textAlignment = NSTextAlignmentCenter;
+//    label.font = [UIFont fontWithName:@"Silom" size:40];
+//    //NSLog(@"%@", label);
+//    
+//    TTImageView *imageView = [[TTImageView alloc] init];
+//    imageView.frame = rect;
+//    imageView.center = point;
+//    imageView.number = [NSNumber numberWithInt:imageNumber];
+//    imageView.image = [UIImage imageNamed:@"Background.png"];
+//    imageView.userInteractionEnabled = YES;
+//    
+//    [imageView addSubview:label];
+//    
+//    return imageView;
+//}
+
 + (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber
 {
     NSLog(@"%s", __func__);
@@ -42,6 +73,16 @@
     imageView.userInteractionEnabled = NO;
     
     return imageView;
+}
+
++ (void)TTDeleteImageView
+{
+    UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    for (UIView* subview in vc.view.subviews) {
+        if ([[subview class] isSubclassOfClass:[TTImageView class]]) {
+            [subview removeFromSuperview];
+        }
+    }
 }
 
 //+ (UILabel *)TTMakeLabel:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)number
