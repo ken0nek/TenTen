@@ -10,6 +10,7 @@
 #import "TTViewController.h"
 #import "TTViewManager.h"
 #import "TTImageView.h"
+#import "TTSoundManager.h"
 
 @interface TTGestureManager : NSObject
 

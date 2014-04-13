@@ -65,6 +65,9 @@
                 if (aView.tag != sender.view.tag) {
                     [self didIntersect:sender intersect:(TTImageView *)aView with:(TTImageView *)sender.view];
                     
+                    TTSoundManager *sm = [TTSoundManager init];
+                    [sm playSounds:TTActionTypeDidIntersect];
+                    sm = nil;
                     NSLog(@"Intersect! aView.tag = %d and sender.view.tag = %d", (int)aView.tag, (int)sender.view.tag);
                     
                     break;
@@ -136,6 +139,12 @@
     NSLog(@"%d", [newImageView.number intValue]);
     // [TTGestureManager setDragForView:newLabel];
     [TTGestureManager setDragForView:newImageView];
+    
+    if ([newImageView.number intValue] == 10) {
+        TTSoundManager *sm = [TTSoundManager init];
+        [sm playSounds:TTActionTypeDidClear];
+        sm = nil;
+    }
     
     //UIViewController*vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     //NSLog(@"%@", vc);

@@ -102,6 +102,7 @@
 
 - (void)convertToArray:(NSString *)combinationString
 {
+    
     NSLog(@"%s", __func__);
     int combinationInt = [combinationString intValue];
     for (int i = 0; i < 4; i++) {
@@ -151,5 +152,9 @@
     [self displayDigitImageView];
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 @end

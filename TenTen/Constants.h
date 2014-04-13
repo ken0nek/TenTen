@@ -22,6 +22,11 @@ typedef enum : int {
     TTFiledTypeDivision
 } TTFiledType;
 
+typedef enum : int {
+    TTActionTypeDidIntersect,
+    TTActionTypeDidClear
+} TTActionType;
+
 //typedef enum : int {
 //    TTGameState,
 //    <#MyEnumValueB#>,
