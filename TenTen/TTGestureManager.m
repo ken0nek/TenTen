@@ -10,6 +10,9 @@
 
 
 @interface TTGestureManager ()
+{
+    BOOL isFraction;
+}
 
 @end
 

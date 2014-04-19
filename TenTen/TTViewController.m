@@ -98,7 +98,7 @@
         NSString *contentOfFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         //NSArray *lines = [contentOfFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
         lines = [contentOfFile componentsSeparatedByString:@"\n"];
-        DLog(@"%@", lines);
+        // DLog(@"%@", lines);
     }
 }
 
@@ -117,7 +117,9 @@
 
 - (IBAction)levelButtonPushed:(UIButton *)sender
 {
-    switch (sender.tag) {
+    level = sender.tag;
+    DLog(@"level = %d", level);
+    switch (level) {
         case TTGameLevelEasy:
             [self loadCSVFileWithLevel:TTGameLevelEasy];
             break;
