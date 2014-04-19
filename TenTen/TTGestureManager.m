@@ -128,9 +128,9 @@
     
     int ope = [self determineOperator:aView];
     
-    //int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
+    int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
     
-    TTFraction *output = [TTFraction TTFractionCalculate:aNumber with:bNumber withOpe:ope];
+    //TTFraction *output = [TTFraction TTFractionCalculate:aNumber with:bNumber withOpe:ope];
     
     // -------------------------------------------------------
     //  TODO: tagの処理

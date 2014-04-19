@@ -74,8 +74,6 @@
 //    TTImageView *imageView = [[TTImageView alloc] init];
 //    imageView = [TTViewManager TTMakeImageView:CGPointMake(120, 200) withTag:0 withNumber:49];
 //    [self.view addSubview:imageView];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning

@@ -81,7 +81,11 @@
         b = number;
     }
     
-    return a;
+    if (a > 0) {
+        return  a;
+    } else {
+        return -a;
+    }
 }
 
 // 逆数をとる
@@ -144,9 +148,7 @@
 
 + (TTFraction *)TTFractionSubtraction:(TTFraction *)a with:(TTFraction *)b
 {
-    NSLog(@"-1をかける前 : %d", b.numerator);
     [b setNumerator:b.numerator*(-1)]; // 一方を(-1)倍する
-    NSLog(@"-1をかけた後 : %d", b.numerator);
     TTFraction *newFraction = [TTFraction TTFractionAddition:a with:b];
     return newFraction;
 }
@@ -156,7 +158,7 @@
     int newNumerator;
     int newDenominator;
     
-    newNumerator = a.numerator * b.numerator + a.denominator * b.denominator;
+    newNumerator = a.numerator * b.numerator;
     newDenominator = a.denominator * b.denominator;
     
     TTFraction *newFraction = [[TTFraction alloc] initWithInt:newNumerator and:newDenominator];
