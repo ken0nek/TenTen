@@ -30,7 +30,7 @@
 //    label.text = [NSString stringWithFormat:@"%d", imageNumber];
 //    label.textAlignment = NSTextAlignmentCenter;
 //    label.font = [UIFont fontWithName:@"Silom" size:40];
-//    //NSLog(@"%@", label);
+//    //DLog(@"%@", label);
 //    
 //    TTImageView *imageView = [[TTImageView alloc] init];
 //    imageView.frame = rect;
@@ -46,7 +46,7 @@
 
 + (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber
 {
-    NSLog(@"%s", __func__);
+    DLog(@"%s", __func__);
     CGSize size = CGSizeMake(DigitImageWidth, DigitImageHeight);
     CGRect rect = {point, size};
 

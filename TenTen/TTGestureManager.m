@@ -34,13 +34,13 @@
 {
     UIView *targetView = sender.view;
     
-    // NSLog(@"tag of target = %d", (int)targetView.tag);
+    // DLog(@"tag of target = %d", (int)targetView.tag);
     
     // CGPoint p = [sender translationInView:targetView];
     
     CGPoint movedPoint = [self calculateDistance:sender];
     
-    // NSLog(@"now at %@", NSStringFromCGPoint(movedPoint));
+    // DLog(@"now at %@", NSStringFromCGPoint(movedPoint));
     
     targetView.center = movedPoint;
     
@@ -70,12 +70,12 @@
                     TTSoundManager *sm = [TTSoundManager init];
                     [sm playSounds:TTActionTypeDidIntersect];
                     sm = nil;
-                    NSLog(@"Intersect! aView.tag = %d and sender.view.tag = %d", (int)aView.tag, (int)sender.view.tag);
+                    DLog(@"Intersect! aView.tag = %d and sender.view.tag = %d", (int)aView.tag, (int)sender.view.tag);
                     
                     break;
                 }
             } else {
-                NSLog(@"Not intersect!");
+                DLog(@"Not intersect!");
                 
             }
         }
@@ -84,12 +84,12 @@
 //        if ([[aView class] isSubclassOfClass:[UILabel class]]) {
 //            if (CGRectIntersectsRect(aView.frame, sender.view.frame)) {
 //                if (aView.tag != sender.view.tag) {
-//                    NSLog(@"Intersect! aView.tag = %d and sender.view.tag = %d", (int)aView.tag, (int)sender.view.tag);
+//                    DLog(@"Intersect! aView.tag = %d and sender.view.tag = %d", (int)aView.tag, (int)sender.view.tag);
 //                    [self didIntersect:aView withView:(UILabel *)sender.view at:[self calculateDistance:sender]];
 //                    break;
 //                }
 //            } else {
-//                NSLog(@"Not intersect!");
+//                DLog(@"Not intersect!");
 //                
 //            }
 //        }
@@ -109,7 +109,7 @@
 //    [TTGestureManager setDragForView:newLabel];
 //    
 //    //UIViewController*vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-//    //NSLog(@"%@", vc);
+//    //DLog(@"%@", vc);
 //    //[[vc view] addSubview:label5];
 //
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"didAppearNewLabel" object:newLabel];
@@ -140,7 +140,7 @@
     
     // UILabel *newLabel = [TTViewManager TTMakeLabel:point withTag:4 withNumber:sum];
     TTImageView *newImageView = [TTViewManager TTMakeImageView:point withTag:tagNumber withNumber:output];
-    NSLog(@"%d", [newImageView.number intValue]);
+    DLog(@"%d", [newImageView.number intValue]);
     // [TTGestureManager setDragForView:newLabel];
     [TTGestureManager setDragForView:newImageView];
     
@@ -151,7 +151,7 @@
     }
     
     //UIViewController*vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-    //NSLog(@"%@", vc);
+    //DLog(@"%@", vc);
     //[[vc view] addSubview:label5];
     
     // [[NSNotificationCenter defaultCenter] postNotificationName:@"didAppearNewLabel" object:newLabel];
@@ -165,7 +165,7 @@
 + (int)calculateOutput:(int)a and:(int)b withOpe:(TTFiledType)fieldType
 {
     int output = 0;
-    NSLog(@"fieldType = %d", fieldType);
+    DLog(@"fieldType = %d", fieldType);
     switch (fieldType) {
         case TTFiledTypeAddtion:
             output = a + b;
@@ -180,12 +180,12 @@
             if (a % b == 0) {
                 output =  a / b;
             } else {
-                NSLog(@"fraction");
+                DLog(@"fraction");
             }
         default:
             break;
     }
-    NSLog(@"output = %d", output);
+    DLog(@"output = %d", output);
     return output;
     
     
@@ -200,17 +200,17 @@
     // UIViewController *vc = [[[[[UIApplication sharedApplication] delegate] window] rootViewController]presentingViewController];
     
     for (UIView *aField in [[vc view] subviews]) {
-        NSLog(@"????????????????");
+        DLog(@"????????????????");
         if (![[aField class] isSubclassOfClass:[TTImageView class]] && CGRectContainsRect(aField.frame, aView.frame)) {
-            NSLog(@"%@", aField);
+            DLog(@"%@", aField);
             ope = (int)aField.tag;
-            NSLog(@"ope = %d", ope);
+            DLog(@"ope = %d", ope);
             break;
         } else {
-            NSLog(@"えるす");
+            DLog(@"えるす");
         }
     }
-    NSLog(@"ope = %d", ope);
+    DLog(@"ope = %d", ope);
     return ope;
 }
 @end

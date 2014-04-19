@@ -28,7 +28,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserverForName:@"didAppearNewImageView"
                                                       object:nil queue:nil usingBlock:^(NSNotification *note) {
-                                                          NSLog(@"%@", note.object);
+                                                          DLog(@"%@", note.object);
                                                           [self.view addSubview:note.object];
                                                       }];
     
@@ -43,7 +43,7 @@
     
     [self displayDigitImageView];
     
-    NSLog(@"%s", __func__);
+    DLog(@"%s", __func__);
     
 //    for (int i  = 0, dx = 0, dy = 0; i < 4; i++) {
 //        if ((i + 1) % 2) {
@@ -60,7 +60,7 @@
 //        
 //        TTImageView *imageView = [[TTImageView alloc] init];
 //        imageView = [TTViewManager TTMakeImageView:CGPointMake(dx, dy) withTag:i withNumber:figures[i]];
-//        NSLog(@"%@", imageView);
+//        DLog(@"%@", imageView);
 //        [self.view addSubview:imageView];
 //        [TTGestureManager setDragForView:imageView];
 //    }
@@ -92,13 +92,13 @@
 
 - (void)loadCSVFile
 {
-    NSLog(@"%s", __func__);
+    DLog();
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"combination_all" ofType:@"csv"];
     if (filePath) {
         NSString *contentOfFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         //NSArray *lines = [contentOfFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
         lines = [contentOfFile componentsSeparatedByString:@"\n"];
-        NSLog(@"%@", lines);
+        DLog(@"%@", lines);
     }
 }
 
@@ -112,7 +112,7 @@
             [linesByLevel addObject:itemArray[1]];
         }
     }
-    NSLog(@"%@", linesByLevel);
+    DLog(@"%@", linesByLevel);
 }
 
 - (IBAction)levelButtonPushed:(UIButton *)sender
@@ -138,24 +138,24 @@
     
     int randomNumber = arc4random() % [linesByLevel count];
     NSString *aLine = linesByLevel[randomNumber];
-    NSLog(@"%d", [aLine intValue]);
+    DLog(@"%d", [aLine intValue]);
     
-    NSLog(@"%s", __func__);
+    DLog(@"%s", __func__);
     int combinationInt = [aLine intValue];
     for (int i = 0; i < 4; i++) {
         figures[i] = combinationInt % 10;
-        NSLog(@"%d", figures[i]);
+        DLog(@"%d", figures[i]);
         combinationInt /= 10;
     }
 }
 
 - (void)displayDigitImageView
 {
-    NSLog(@"%s", __func__);
+    DLog(@"%s", __func__);
     for (int i  = 0, dx = 0, dy = 0; i < 4; i++) {
         if ((i + 1) % 2) {
             dx = 100;
-            dy += 100;
+            dy += 110;
         } else {
             dx += 100;
         }

@@ -21,7 +21,7 @@
         self.numerator = numerator;
         self.denominator = denominator;
     } else {
-        NSLog(@"分母が0");
+        DLog(@"分母が0");
     }
     
     int gcd = [TTFraction TTCalculateGCD:self.numerator and:self.denominator];

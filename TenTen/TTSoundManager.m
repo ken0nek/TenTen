@@ -24,7 +24,7 @@
     CFURLRef soundURL;
     SystemSoundID soundID;
     NSString *soundName = soundNameArray[type];
-    NSLog(@"%@", soundName);
+    DLog(@"%@", soundName);
     CFStringRef soundNameCF = (__bridge CFStringRef)soundName;
     soundURL = CFBundleCopyResourceURL(mainBundle, soundNameCF,CFSTR("mp3"),nil);
     AudioServicesCreateSystemSoundID(soundURL,&soundID);
@@ -38,7 +38,7 @@
 - (id)init{
     self = [super init];
 
-    NSLog(@"setSoundArray");
+    DLog(@"setSoundArray");
     
     soundNameArray = @[@"poyo", @"surprise"];
     
