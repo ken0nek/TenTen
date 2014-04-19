@@ -28,6 +28,12 @@ typedef enum : int {
     TTActionTypeDidMiss
 } TTActionType;
 
+typedef enum : int {
+    TTGameLevelEasy,
+    TTGameLevelMidium,
+    TTGameLevelHard
+} TTGameLevel;
+
 //typedef enum : int {
 //    TTGameState,
 //    <#MyEnumValueB#>,

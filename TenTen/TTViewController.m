@@ -13,6 +13,8 @@
 {
     int figures[4];
     NSArray *lines;
+    NSMutableArray *linesByLevel;
+    int level;
 }
 
 @end
@@ -31,7 +33,11 @@
                                                       }];
     
     
-    [self loadTextFile];
+    level = TTGameLevelEasy;
+    
+    [self loadCSVFile];
+    
+    [self loadCSVFileWithLevel:level];
     
     [self convertToArray];
     
@@ -84,22 +90,54 @@
 
 #pragma mark - User Define Methods
 
-- (void)loadTextFile
+- (void)loadCSVFile
 {
     NSLog(@"%s", __func__);
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"combination" ofType:@"txt"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"combination_all" ofType:@"csv"];
     if (filePath) {
         NSString *contentOfFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         //NSArray *lines = [contentOfFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
         lines = [contentOfFile componentsSeparatedByString:@"\n"];
+        NSLog(@"%@", lines);
+    }
+}
+
+- (void)loadCSVFileWithLevel:(TTGameLevel)gameLevel
+{
+    linesByLevel = [[NSMutableArray alloc] init];
+    
+    for (NSString *item in lines) {
+        NSArray *itemArray = [item componentsSeparatedByString:@","];
+        if ([itemArray[0] intValue] == gameLevel) {
+            [linesByLevel addObject:itemArray[1]];
+        }
+    }
+    NSLog(@"%@", linesByLevel);
+}
+
+- (IBAction)levelButtonPushed:(UIButton *)sender
+{
+    switch (sender.tag) {
+        case TTGameLevelEasy:
+            [self loadCSVFileWithLevel:TTGameLevelEasy];
+            break;
+        case TTGameLevelMidium:
+            [self loadCSVFileWithLevel:TTGameLevelMidium];
+            break;
+        case TTGameLevelHard:
+            [self loadCSVFileWithLevel:TTGameLevelHard];
+            break;
+        default:
+            break;
     }
 }
 
 - (void)convertToArray
 {
-    NSLog(@"%@", lines);
-    int randomNumber = arc4random() % [lines count];
-    NSString *aLine = lines[randomNumber];
+    [self loadCSVFileWithLevel:level];
+    
+    int randomNumber = arc4random() % [linesByLevel count];
+    NSString *aLine = linesByLevel[randomNumber];
     NSLog(@"%d", [aLine intValue]);
     
     NSLog(@"%s", __func__);
