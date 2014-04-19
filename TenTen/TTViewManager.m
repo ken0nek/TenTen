@@ -78,7 +78,8 @@
 + (void)TTDeleteImageView
 {
     UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-    for (UIView* subview in vc.view.subviews) {
+    // UIViewController *vc = [[[[[UIApplication sharedApplication] delegate] window] rootViewController]presentingViewController];
+    for (UIView *subview in vc.view.subviews) {
         if ([[subview class] isSubclassOfClass:[TTImageView class]]) {
             [subview removeFromSuperview];
         }

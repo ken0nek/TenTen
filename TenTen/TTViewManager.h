@@ -11,7 +11,7 @@
 
 @interface TTViewManager : NSObject
 
-+ (TTImageView *)TTMake:(CGPoint)point withNumber:(int)imageNumber;
+//+ (TTImageView *)TTMake:(CGPoint)point withNumber:(int)imageNumber;
 
 + (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber;
 

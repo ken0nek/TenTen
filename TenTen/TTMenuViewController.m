@@ -35,6 +35,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+- (IBAction)goSingle:(id)sender
+{
+    [self performSegueWithIdentifier:@"goSingle" sender:self];
+}
+
+- (IBAction)goMulti:(id)sender
+{
+    [self performSegueWithIdentifier:@"goMulti" sender:self];
+}
+
+
 /*
 #pragma mark - Navigation
 

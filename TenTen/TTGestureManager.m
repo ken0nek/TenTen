@@ -8,6 +8,7 @@
 
 #import "TTGestureManager.h"
 
+
 @interface TTGestureManager ()
 
 @end
@@ -46,6 +47,7 @@
     [sender setTranslation:CGPointZero inView:targetView];
     
     UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    //  UIViewController *vc = [[[[[UIApplication sharedApplication] delegate] window] rootViewController]presentingViewController];
     [[vc view] addSubview:targetView];
     
     if (sender.state == UIGestureRecognizerStateEnded) {
@@ -126,7 +128,9 @@
     
     int ope = [self determineOperator:aView];
     
-    int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
+    //int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
+    
+    TTFraction *output = [TTFraction TTFractionCalculate:aNumber with:bNumber withOpe:ope];
     
     // -------------------------------------------------------
     //  TODO: tagの処理
@@ -154,6 +158,10 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didAppearNewImageView" object:newImageView];
 }
 
+
+// -------------------------------------------------------
+//  要らなくなる
+// -------------------------------------------------------
 + (int)calculateOutput:(int)a and:(int)b withOpe:(TTFiledType)fieldType
 {
     int output = 0;
@@ -179,6 +187,8 @@
     }
     NSLog(@"output = %d", output);
     return output;
+    
+    
 }
                
                
@@ -187,13 +197,14 @@
     int ope = 0;
     
     UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    // UIViewController *vc = [[[[[UIApplication sharedApplication] delegate] window] rootViewController]presentingViewController];
     
     for (UIView *aField in [[vc view] subviews]) {
         NSLog(@"????????????????");
         if (![[aField class] isSubclassOfClass:[TTImageView class]] && CGRectContainsRect(aField.frame, aView.frame)) {
             NSLog(@"%@", aField);
             ope = (int)aField.tag;
-            NSLog(@"ope_ = %d", ope);
+            NSLog(@"ope = %d", ope);
             break;
         } else {
             NSLog(@"えるす");
