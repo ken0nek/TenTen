@@ -35,6 +35,18 @@
     return self;
 }
 
+- (BOOL)isFraction
+{
+    BOOL flag = NO;
+    if (self.denominator == 1) {
+        flag = NO;
+    } else {
+        flag = YES;
+    }
+    
+    return flag;
+}
+
 - (id)init
 {
     return self;

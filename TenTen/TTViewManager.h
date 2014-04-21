@@ -13,7 +13,7 @@
 
 //+ (TTImageView *)TTMake:(CGPoint)point withNumber:(int)imageNumber;
 
-+ (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)imageNumber;
++ (TTImageView *)TTMakeImageView:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(TTFraction * )imageNumber;
 
 // + (UILabel *)TTMakeLabel:(CGPoint)point withTag:(NSInteger)tagNumber withNumber:(int)number;
 

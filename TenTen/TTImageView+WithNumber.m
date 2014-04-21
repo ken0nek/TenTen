@@ -9,27 +9,45 @@
 #import "TTImageView+WithNumber.h"
 #import <objc/runtime.h>
 
-static char kImageViewWithNumber;
+static char kImageViewNumerator;
+static char kImageViewDenominator;
 
 @implementation TTImageView (WithNumber)
 
-- (void)setNumber:(id)number
+- (void)setNumeratorNumber:(id)numeratorNumber
 {
     objc_setAssociatedObject(
                              self,
-                             &kImageViewWithNumber,
-                             number,
+                             &kImageViewNumerator,
+                             numeratorNumber,
                              OBJC_ASSOCIATION_COPY_NONATOMIC
                              );
 }
 
-- (id)number
+- (id)numeratorNumber
 {
     return objc_getAssociatedObject(
                                     self,
-                                    &kImageViewWithNumber
+                                    &kImageViewNumerator
                                     );
 }
 
+- (void)setDenominatorNumber:(id)denominatorNumber
+{
+    objc_setAssociatedObject(
+                             self,
+                             &kImageViewDenominator,
+                             denominatorNumber,
+                             OBJC_ASSOCIATION_COPY_NONATOMIC
+                             );
+}
+
+- (id)denominatorNumber
+{
+    return objc_getAssociatedObject(
+                                    self,
+                                    &kImageViewDenominator
+                                    );
+}
 
 @end

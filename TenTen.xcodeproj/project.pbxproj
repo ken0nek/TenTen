@@ -35,6 +35,7 @@
 		4A39792418F9906A004E252C /* field1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A39792018F9906A004E252C /* field1.png */; };
 		4A39792518F9906A004E252C /* field2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A39792118F9906A004E252C /* field2.png */; };
 		4A39792618F9906A004E252C /* field3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A39792218F9906A004E252C /* field3.png */; };
+		4A5238D0190209710087F53A /* TTFraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5238CF190209710087F53A /* TTFraction.m */; };
 		4A5647B418F4C4E9001713EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5647B318F4C4E9001713EB /* Foundation.framework */; };
 		4A5647B618F4C4E9001713EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5647B518F4C4E9001713EB /* CoreGraphics.framework */; };
 		4A5647B818F4C4E9001713EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5647B718F4C4E9001713EB /* UIKit.framework */; };
@@ -51,11 +52,14 @@
 		4A5647DF18F4C4E9001713EB /* TenTenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647DE18F4C4E9001713EB /* TenTenTests.m */; };
 		4A5647F018F4C8AA001713EB /* TTViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647EF18F4C8AA001713EB /* TTViewManager.m */; };
 		4A5647F618F4D56C001713EB /* TTGestureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5647F518F4D56C001713EB /* TTGestureManager.m */; };
+		4A7B144719026DA300331DAE /* combination_all.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B144619026DA300331DAE /* combination_all.csv */; };
 		4A9C928F18FAF8C500D0070D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9C928E18FAF8C500D0070D /* icon@2x.png */; };
 		4A9C929118FAF98400D0070D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9C929018FAF98400D0070D /* Default@2x.png */; };
 		4AA0D58618FAE2BC00630E14 /* poyo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0D58418FAE2BC00630E14 /* poyo.mp3 */; };
 		4AA0D58718FAE2BC00630E14 /* surprise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0D58518FAE2BC00630E14 /* surprise.mp3 */; };
 		4AA0D58B18FAE33400630E14 /* TTSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0D58A18FAE33400630E14 /* TTSoundManager.m */; };
+		4AAB585D18FD859B00F5D21D /* TTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAB585C18FD859B00F5D21D /* TTMenuViewController.m */; };
+		4AAB586218FD8B8000F5D21D /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAB586118FD8B8000F5D21D /* MultipeerConnectivity.framework */; };
 		4AE1E2A318F7B5DB00CA5D0C /* combination.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4AE1E2A218F7B5DB00CA5D0C /* combination.txt */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +105,8 @@
 		4A39792018F9906A004E252C /* field1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field1.png; sourceTree = "<group>"; };
 		4A39792118F9906A004E252C /* field2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field2.png; sourceTree = "<group>"; };
 		4A39792218F9906A004E252C /* field3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field3.png; sourceTree = "<group>"; };
+		4A5238CE190209710087F53A /* TTFraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFraction.h; sourceTree = "<group>"; };
+		4A5238CF190209710087F53A /* TTFraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFraction.m; sourceTree = "<group>"; };
 		4A5647B018F4C4E9001713EB /* TenTen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenTen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5647B318F4C4E9001713EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A5647B518F4C4E9001713EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,12 +130,16 @@
 		4A5647EF18F4C8AA001713EB /* TTViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewManager.m; sourceTree = "<group>"; };
 		4A5647F418F4D56C001713EB /* TTGestureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGestureManager.h; sourceTree = "<group>"; };
 		4A5647F518F4D56C001713EB /* TTGestureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGestureManager.m; sourceTree = "<group>"; };
+		4A7B144619026DA300331DAE /* combination_all.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = combination_all.csv; sourceTree = "<group>"; };
 		4A9C928E18FAF8C500D0070D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		4A9C929018FAF98400D0070D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4AA0D58418FAE2BC00630E14 /* poyo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poyo.mp3; sourceTree = "<group>"; };
 		4AA0D58518FAE2BC00630E14 /* surprise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = surprise.mp3; sourceTree = "<group>"; };
 		4AA0D58918FAE33400630E14 /* TTSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSoundManager.h; sourceTree = "<group>"; };
 		4AA0D58A18FAE33400630E14 /* TTSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSoundManager.m; sourceTree = "<group>"; };
+		4AAB585B18FD859B00F5D21D /* TTMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMenuViewController.h; sourceTree = "<group>"; };
+		4AAB585C18FD859B00F5D21D /* TTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMenuViewController.m; sourceTree = "<group>"; };
+		4AAB586118FD8B8000F5D21D /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		4AE1E2A218F7B5DB00CA5D0C /* combination.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = combination.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AAB586218FD8B8000F5D21D /* MultipeerConnectivity.framework in Frameworks */,
 				4A5647B618F4C4E9001713EB /* CoreGraphics.framework in Frameworks */,
 				4A5647B818F4C4E9001713EB /* UIKit.framework in Frameworks */,
 				4A5647B418F4C4E9001713EB /* Foundation.framework in Frameworks */,
@@ -257,6 +268,7 @@
 		4A5647B218F4C4E9001713EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AAB586118FD8B8000F5D21D /* MultipeerConnectivity.framework */,
 				4A5647B318F4C4E9001713EB /* Foundation.framework */,
 				4A5647B518F4C4E9001713EB /* CoreGraphics.framework */,
 				4A5647B718F4C4E9001713EB /* UIKit.framework */,
@@ -272,8 +284,11 @@
 				4A5647C318F4C4E9001713EB /* TTAppDelegate.m */,
 				4A5647C518F4C4E9001713EB /* Main.storyboard */,
 				4A39791218F98A2F004E252C /* Constants.h */,
+				4AAB585B18FD859B00F5D21D /* TTMenuViewController.h */,
+				4AAB585C18FD859B00F5D21D /* TTMenuViewController.m */,
 				4A5647C818F4C4E9001713EB /* TTViewController.h */,
 				4A5647C918F4C4E9001713EB /* TTViewController.m */,
+				4A7B143D1902473800331DAE /* TTFraction */,
 				4A39791D18F98D7A004E252C /* TTImageVIew */,
 				4A39792718F99192004E252C /* TTViewManager */,
 				4AA0D58C18FAE33B00630E14 /* TTSoundManager */,
@@ -314,6 +329,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4A7B143D1902473800331DAE /* TTFraction */ = {
+			isa = PBXGroup;
+			children = (
+				4A5238CE190209710087F53A /* TTFraction.h */,
+				4A5238CF190209710087F53A /* TTFraction.m */,
+			);
+			name = TTFraction;
+			sourceTree = "<group>";
+		};
 		4AA0D58818FAE2C200630E14 /* audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				4A36E84618FAB3E5000F089F /* Silom.ttf */,
+				4A7B144619026DA300331DAE /* combination_all.csv */,
 				4AE1E2A218F7B5DB00CA5D0C /* combination.txt */,
 				4A9C928E18FAF8C500D0070D /* icon@2x.png */,
 				4A9C929018FAF98400D0070D /* Default@2x.png */,
@@ -453,6 +478,7 @@
 				4A5647CC18F4C4E9001713EB /* Images.xcassets in Resources */,
 				4A9C929118FAF98400D0070D /* Default@2x.png in Resources */,
 				4A39792418F9906A004E252C /* field1.png in Resources */,
+				4A7B144719026DA300331DAE /* combination_all.csv in Resources */,
 				4A3978FE18F97F8C004E252C /* 1.png in Resources */,
 				4A5647BE18F4C4E9001713EB /* InfoPlist.strings in Resources */,
 				4AA0D58618FAE2BC00630E14 /* poyo.mp3 in Resources */,
@@ -478,12 +504,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A3978E618F970B6004E252C /* TTImageView+WithNumber.m in Sources */,
+				4A5238D0190209710087F53A /* TTFraction.m in Sources */,
 				4A3978C518F942E9004E252C /* TTImageView.m in Sources */,
 				4A5647F018F4C8AA001713EB /* TTViewManager.m in Sources */,
 				4A5647C418F4C4E9001713EB /* TTAppDelegate.m in Sources */,
 				4A5647C018F4C4E9001713EB /* main.m in Sources */,
 				4A5647F618F4D56C001713EB /* TTGestureManager.m in Sources */,
 				4A5647CA18F4C4E9001713EB /* TTViewController.m in Sources */,
+				4AAB585D18FD859B00F5D21D /* TTMenuViewController.m in Sources */,
 				4AA0D58B18FAE33400630E14 /* TTSoundManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

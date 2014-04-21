@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TenTen/TTSoundManager.m"
-            timestampString = "419096767.337148"
+            filePath = "TenTen/TTGestureManager.m"
+            timestampString = "419733834.229733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "+init"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "+checkIntersection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

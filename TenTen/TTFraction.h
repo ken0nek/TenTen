@@ -11,9 +11,11 @@
 @interface TTFraction : NSObject
 
 // 分子
-@property int numerator;
+@property (nonatomic) int numerator;
 // 分母
-@property int denominator;
+@property (nonatomic) int denominator;
+// 分数かどうか
+@property (nonatomic) BOOL isFraction;
 
 + (TTFraction *)TTFractionCalculate:(TTFraction *)a with:(TTFraction *)b withOpe:(TTFiledType)type;
 - (int)intValue;

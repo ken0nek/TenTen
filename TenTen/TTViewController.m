@@ -117,7 +117,7 @@
 
 - (IBAction)levelButtonPushed:(UIButton *)sender
 {
-    level = sender.tag;
+    level = (int)sender.tag;
     DLog(@"level = %d", level);
     switch (level) {
         case TTGameLevelEasy:
@@ -167,7 +167,7 @@
         //        [self.view addSubview:label];
         //        [TTGestureManager setDragForView:label];
         TTImageView *imageView = [[TTImageView alloc] init];
-        imageView = [TTViewManager TTMakeImageView:CGPointMake(dx, dy) withTag:i withNumber:figures[i]];
+        imageView = [TTViewManager TTMakeImageView:CGPointMake(dx, dy) withTag:i withNumber:[TTFraction numberWithInt:figures[i]]];
         [self.view addSubview:imageView];
         [TTGestureManager setDragForView:imageView];
     }

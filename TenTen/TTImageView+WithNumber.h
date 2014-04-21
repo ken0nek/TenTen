@@ -10,10 +10,13 @@
 
 @interface TTImageView (WithNumber)
 
-@property (nonatomic) id number;
+@property (nonatomic) id numeratorNumber;
+@property (nonatomic) id denominatorNumber;
 
-- (void)setNumber:(id)number;
+- (void)setNumeratorNumber:(id)numeratorNumber;
+- (id)numeratorNumber;
 
-- (id)number;
+- (void)setDenominatorNumber:(id)denominatorNumber;
+- (id)denominatorNumber;
 
 @end

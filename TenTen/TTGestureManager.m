@@ -10,9 +10,6 @@
 
 
 @interface TTGestureManager ()
-{
-    BOOL isFraction;
-}
 
 @end
 
@@ -121,8 +118,11 @@
 
 + (void)didIntersect:(UIPanGestureRecognizer *)sender intersect:(TTImageView *)aView with:(TTImageView *)bView
 {
-    int aNumber = [aView.number intValue];
-    int bNumber = [bView.number intValue];
+//    int aNumber = [aView.number intValue];
+//    int bNumber = [bView.number intValue];
+    
+    TTFraction *aNumber = [[TTFraction alloc] initWithInt:[aView.numeratorNumber intValue] and:[aView.denominatorNumber intValue]];
+    TTFraction *bNumber = [[TTFraction alloc] initWithInt:[bView.numeratorNumber intValue] and:[bView.denominatorNumber intValue]];
     
     CGPoint point = [self calculateDistance:sender];
     
@@ -131,23 +131,29 @@
     
     int ope = [self determineOperator:aView];
     
-    int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
+    //int output = [self calculateOutput:aNumber and:bNumber withOpe:ope];
     
-    //TTFraction *output = [TTFraction TTFractionCalculate:aNumber with:bNumber withOpe:ope];
+    TTFraction *output = [TTFraction TTFractionCalculate:aNumber with:bNumber withOpe:ope];
     
     // -------------------------------------------------------
     //  TODO: tagの処理
     // -------------------------------------------------------
     
-    int tagNumber = output + aNumber;
+    int tagNumber = [output intValue] + [aNumber intValue];
     
     // UILabel *newLabel = [TTViewManager TTMakeLabel:point withTag:4 withNumber:sum];
     TTImageView *newImageView = [TTViewManager TTMakeImageView:point withTag:tagNumber withNumber:output];
-    DLog(@"%d", [newImageView.number intValue]);
+    //DLog(@"%d", [newImageView.number intValue]);
     // [TTGestureManager setDragForView:newLabel];
     [TTGestureManager setDragForView:newImageView];
     
-    if ([newImageView.number intValue] == 10) {
+//    if ([newImageView.number intValue] == 10) {
+//        TTSoundManager *sm = [TTSoundManager init];
+//        [sm playSounds:TTActionTypeDidClear];
+//        sm = nil;
+//    }
+
+    if ([newImageView.numeratorNumber  isEqual:@10] && [newImageView.denominatorNumber isEqual:@1]) {
         TTSoundManager *sm = [TTSoundManager init];
         [sm playSounds:TTActionTypeDidClear];
         sm = nil;
