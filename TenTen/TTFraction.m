@@ -49,6 +49,14 @@
 
 - (id)init
 {
+    self = [super init];
+
+    if (self) {
+        self.numerator = 1;
+        self.denominator = 1;
+        self.isFraction = NO;
+    }
+    
     return self;
 }
 
